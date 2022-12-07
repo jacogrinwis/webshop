@@ -1,0 +1,181 @@
+:root {
+    --ck-bg-gray-50: hsl(210, 20%, 98%);
+    --ck-bg-gray-100: hsl(220, 14%, 96%);
+    --ck-bg-gray-200: hsl(220, 13%, 91%);
+    --ck-bg-gray-300: hsl(216, 12%, 84%);
+    --ck-bg-gray-400: hsl(218, 11%, 65%);
+    --ck-bg-gray-500: hsl(220, 9%, 46%);
+    --ck-bg-gray-600: hsl(215, 14%, 34%);
+    --ck-bg-gray-700: hsl(217, 19%, 27%);
+    --ck-bg-gray-800: hsl(215, 28%, 17%);
+    --ck-bg-gray-900: hsl(221, 39%, 11%);
+
+    --ck-border-radius: 0.5rem;
+    --ck-color-shadow-inner: none;
+    --ck-color-focus-border: hsl(218, 93%, 61%);
+}
+
+@media(prefers-color-scheme: light) {
+    :root {
+        --ck-color-base-text: var(--ck-bg-gray-500);
+        --ck-color-base-border: var(--ck-bg-gray-200);
+
+        /* -- Generic colors ------------------------------------------------------------------------ */
+        /* --ck-color-focus-border: var(--ck-bg-gray-200); */
+
+        --ck-color-button-default-background: var(--ck-bg-gray-50);
+        --ck-color-button-default-hover-background: var(--ck-bg-gray-100);
+        --ck-color-button-default-active-background: var(--ck-bg-gray-100);
+        --ck-color-button-default-disabled-background: var(--ck-bg-gray-50);
+
+        /* -- Buttons ------------------------------------------------------------------------------- */
+        --ck-color-button-on-background: var(--ck-bg-gray-100);
+        --ck-color-button-on-hover-background: var(--ck-bg-gray-100);
+        --ck-color-button-on-active-background: var(--ck-bg-gray-100);
+        --ck-color-button-on-disabled-background: var(--ck-bg-gray-50);
+        --ck-color-button-on-color: var(--ck-bg-gray-900);
+
+        /* -- Toolbar ------------------------------------------------------------------------------- */
+        --ck-color-toolbar-background: var(--ck-bg-gray-50);
+        --ck-color-tooltip-text: var(--ck-bg-gray-900);
+
+        /* -- Tooltip ------------------------------------------------------------------------------- */
+        --ck-color-tooltip-background: var(--ck-bg-gray-900);
+        --ck-color-tooltip-text: var(--ck-bg-gray-50);
+    }
+
+    .ck.ck-content {
+        color: var(--ck-bg-gray-800);
+        background-color: white !important;
+    }
+
+    .ck.ck-toolbar__separator {
+        background-color: var(--ck-bg-gray-200) !important;
+    }
+
+    .ck.ck-button:hover,
+    .ck.ck-button.ck-on {
+        color: var(--ck-bg-gray-900);
+    }
+
+    .ck.ck-button.ck-off {
+        background: var(--ck-bg-gray-50);
+    }
+
+    .ck.ck-button.ck-disabled:hover {
+        color: var(--ck-bg-gray-500);
+        background: var(--ck-bg-gray-50);
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --ck-color-base-text: var(--ck-bg-gray-400);
+        --ck-color-base-border: var(--ck-bg-gray-600);
+
+        /* -- Generic colors ------------------------------------------------------------------------ */
+        /* --ck-color-focus-border: var(--ck-bg-gray-600); */
+
+        /* -- Buttons ------------------------------------------------------------------------------- */
+        --ck-color-button-default-background: var(--ck-bg-gray-700);
+        --ck-color-button-default-hover-background: var(--ck-bg-gray-600);
+        --ck-color-button-default-active-background: var(--ck-bg-gray-600);
+        --ck-color-button-default-disabled-background: var(--ck-bg-gray-700);
+
+        --ck-color-button-on-background: var(--ck-bg-gray-700);
+        --ck-color-button-on-hover-background: var(--ck-bg-gray-600);
+        --ck-color-button-on-active-background: var(--ck-bg-gray-600);
+        --ck-color-button-on-disabled-background: var(--ck-bg-gray-700);
+        --ck-color-button-on-color: var(--ck-bg-gray-50);
+
+        /* -- Toolbar ------------------------------------------------------------------------------- */
+        --ck-color-toolbar-background: var(--ck-bg-gray-700);
+        --ck-color-toolbar-border: var(--ck-bg-gray-600);
+
+        /* -- Tooltip ------------------------------------------------------------------------------- */
+        --ck-color-tooltip-background: var(--ck-bg-gray-50);
+        --ck-color-tooltip-text: var(--ck-bg-gray-900);
+
+        /* -- Engine -------------------------------------------------------------------------------- */
+
+        --ck-color-engine-placeholder-text: var(--ck-bg-gray-400);
+    }
+
+    .ck.ck-content {
+        color: var(--ck-bg-gray-50);
+        background-color: var(--ck-bg-gray-800) !important;
+    }
+
+    .ck.ck-toolbar__separator {
+        background-color: var(--ck-bg-gray-600) !important;
+    }
+
+    .ck.ck-button:hover,
+    .ck.ck-button.ck-on {
+        color: var(--ck-bg-gray-50);
+        background: var(--ck-bg-gray-600);
+    }
+
+    .ck.ck-button.ck-off {
+        background: var(--ck-bg-gray-700);
+    }
+
+    .ck.ck-button.ck-disabled:hover {
+        color: var(--ck-bg-gray-400);
+        background: var(--ck-bg-gray-700);
+    }
+}
+
+.ck.ck-balloon-panel.ck-tooltip {
+    padding: 0.5rem 0.75rem;
+}
+
+.ck.ck-balloon-panel.ck-tooltip.ck-tooltip__text {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.ck.ck-toolbar {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px;
+}
+
+.ck-toolbar__items {
+    gap: 0.25rem;
+}
+
+.ck.ck-button {
+    margin: 0 !important;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.ck.ck-button:hover {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.ck.ck-button.ck-disabled:hover {
+    cursor: default;
+}
+
+.ck.ck-button:focus,
+.ck.ck-button.ck-disabled.ck-off {
+    outline: none;
+    outline-width: 0;
+    box-shadow: none !important;
+}
+
+.ck.ck-content {
+    padding: 0.5rem 1rem;
+    font-size: 0.87rem;
+}
+
+.ck-placeholder {
+    font-size: 0.87rem;
+}
+
+.ck.ck-content:focus-within {
+    /* border: 1px solid red !important; */
+    /* background-color: red; */
+}
