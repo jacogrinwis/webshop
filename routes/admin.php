@@ -18,10 +18,25 @@ use Illuminate\Http\Request;
 //     print('I am an admin');
 // });
 
-Route::resource('users', UsersController::class)->only([
-    'index', 'update', 'destroy', 'edit'
-]);
+// Route::resource('/users', UsersController::class)->only([
+//     'index', 'update', 'destroy', 'edit'
+// ]);
 
-Route::resource('users', UsersController::class)->except([
-    'show', 'create', 'store'
-]);
+// Route::middleware('role:admin')->group(function () {
+//     Route::get('/', function () {
+//         print('I am an admin');
+//     });
+// });
+
+// Route::resource('users', UsersController::class)->except([
+//     'show', 'create', 'store'
+// ]);
+
+// Route::get('/users', [UsersController::class, 'index'])->name('post')->middleware(['role:moderator|publisher|writer|editor|admin|super-admin']);
+
+// Route::group(['middleware' => ['role:admin']])
+
+// Route::get(
+//     '/',
+//     [UsersController::class, 'index']
+// )->name('users');

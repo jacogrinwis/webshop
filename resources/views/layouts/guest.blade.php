@@ -12,6 +12,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/ckeditor.js', 'resources/css/ckeditor/custom.css'])
+
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
