@@ -29,12 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('role:admin')->group(function () {
-    // Route::get('/admin/users', function () {
-    //     print(auth()->user()->name);
-    // });
-
-    Route::get('/admin/users', [UsersController::class, 'index'])->name('users.index');
+Route::prefix('admin')->middleware(['role:moderator|publisher|writer|editor|admin|super-admin'])->group(function () {
+    Route::get('users', [UsersController::class, 'index'])->name('users.index');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
