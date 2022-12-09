@@ -9,7 +9,7 @@
     </button>
     <div :class="open ? '' : 'hidden'"
         class="fixed left-0 top-0 z-10 h-full w-64 md:block px-3 py-6 overflow-y-auto bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 shadow-lg md:shadow-none
-        scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-50 dark:scrollbar-thumb-gray-700 dark:scrollbar-track-gray-900 hover:scrollbar-thumb-gray-300 dark:hover:scrollbar-thumb-gray-600">
+        custom-scrollbar-rounded-thin">
         <div class="flex flex-col justify-center items-center">
             <img class="w-20 h-20 rounded-full mb-4" src="{{ asset('/storage/images/avatar.png') }}">
             <h3 class="text-lg font-bold text-gray-900 dark:text-white">

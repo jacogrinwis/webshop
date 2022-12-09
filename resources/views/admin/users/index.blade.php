@@ -43,15 +43,17 @@
                             <a href="{{ route('admin.users.edit', $user->id) }}"
                                 class="font-medium uppercase text-blue-600 dark:text-blue-500 hover:underline"
                                 role="button">Edit</a>
-                            <button type="button"
+                            {{-- <button type="button"
                                 class="font-medium uppercase text-red-600 dark:text-red-500 hover:underline"
                                 onclick="event.preventDefault(); document.getElementById('delete-user-form-{{ $user->id }}')">
                                 Delete
-                            </button>
-                            <form id="delete-user-form-{{ $user->id }}"
-                                action="{{ 'admin.user.destroy', $user->id }}" method="POST" class="hidden">
+                            </button> --}}
+                            <form action="{{ 'admin.user.destroy', $user->id }}" method="POST" class="inline">
                                 @csrf
-                                @method('DELETE')
+                                @method('delete')
+                                <button type="button"
+                                    class="font-medium uppercase text-red-600 dark:text-red-500 hover:underline"> Delete
+                                </button>
                             </form>
                         </td>
                     </tr>
@@ -59,6 +61,6 @@
             </tbody>
         </table>
     </div>
-    {{ $users->links('vendor.pagination.tailwind') }}
+    {{ $users->links('vendor.pagination.my-tailwind') }}
 
 </x-admin-layout>
