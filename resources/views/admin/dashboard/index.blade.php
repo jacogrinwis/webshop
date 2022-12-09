@@ -46,4 +46,18 @@
         <button class="btn btn-green btn-outline">Outline green</button>
         <button class="btn btn-yellow btn-outline">Outline yellow</button>
     </div>
+    <div class="mb-4">
+        <button class="btn btn-primary w-full mb-2">Primary</button>
+        <button class="btn btn-secondary w-full mb-2">Secondary</button>
+        <button class="btn btn-red w-full mb-2">Red</button>
+        <button class="btn btn-green w-full mb-2">Green</button>
+        <button class="btn btn-yellow w-full mb-2">Yellow</button>
+    </div>
+    <div class="mb-4">
+        <button class="btn btn-primary w-full mb-2 text-left">Primary</button>
+        <button class="btn btn-secondary w-full mb-2 text-left">Secondary</button>
+        <button class="btn btn-red w-full mb-2 text-left">Red</button>
+        <button class="btn btn-green w-full mb-2 text-left">Green</button>
+        <button class="btn btn-yellow w-full mb-2 text-left">Yellow</button>
+    </div>
 </x-admin-layout>

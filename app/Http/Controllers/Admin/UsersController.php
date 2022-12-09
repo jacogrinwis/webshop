@@ -68,11 +68,10 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        // User::destroy($user);
-        $user->delete();
+        // User::destroy($id);
 
-        return redirect()->route('admin.users.index')->withSuccess(__('User delete successfully.'));
+        return redirect()->back()->with('message', 'User delete successfully.');
     }
 }
