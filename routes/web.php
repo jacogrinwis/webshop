@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::middleware('auth')->group(function () {
 
 // Admin Routes
 Route::middleware(['role:moderator|publisher|writer|editor|admin|super-admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('/dashboard', DashboardController::class);
     Route::resource('/users', UsersController::class);
 });
 
