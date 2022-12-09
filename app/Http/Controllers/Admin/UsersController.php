@@ -15,7 +15,17 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        return view('admin.users.index', ['users' => User::paginate(3)]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**

@@ -23,4 +23,7 @@ module.exports = {
         require('flowbite/plugin'),
         require('tailwind-scrollbar')
     ],
+    variants: {
+        scrollbar: ['dark', 'rounded']
+    }
 };
