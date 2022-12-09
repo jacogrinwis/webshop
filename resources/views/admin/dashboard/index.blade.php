@@ -53,11 +53,20 @@
         <button class="btn btn-green w-full mb-2">Green</button>
         <button class="btn btn-yellow w-full mb-2">Yellow</button>
     </div>
-    <div class="mb-4">
-        <button class="btn btn-primary w-full mb-2 text-left">Primary</button>
-        <button class="btn btn-secondary w-full mb-2 text-left">Secondary</button>
-        <button class="btn btn-red w-full mb-2 text-left">Red</button>
-        <button class="btn btn-green w-full mb-2 text-left">Green</button>
-        <button class="btn btn-yellow w-full mb-2 text-left">Yellow</button>
+    <div class="alert alert-info" role="alert">
+        Info alert
     </div>
+    <div class="alert alert-danger" role="alert">
+        Danger alert
+    </div>
+    <div class="alert alert-success" role="alert">
+        Success alert
+    </div>
+    <div class="alert alert-warning" role="alert">
+        Warning alert
+    </div>
+    <div class="alert alert-dark" role="alert">
+        Dark alert
+    </div>
+
 </x-admin-layout>
