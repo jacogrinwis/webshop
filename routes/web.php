@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('admin')->middleware(['role:moderator|publisher|writer|editor|admin|super-admin'])->group(function () {
-    Route::get('users', [UsersController::class, 'index'])->name('users.index');
+// Admin Routes
+Route::middleware(['role:moderator|publisher|writer|editor|admin|super-admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('/users', UsersController::class);
 });
 
 require __DIR__ . '/auth.php';
