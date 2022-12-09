@@ -26,15 +26,10 @@
             <tbody>
                 @foreach ($users as $user)
                     <tr>
-                        <th scope="row">
-                            {{ $user->id }}
-                        </th>
+                        <th scope="row">{{ $user->id }}</th>
                         <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $user->name }}
-                        </td>
-                        <td>
-                            {{ $user->email }}
-                        </td>
+                            {{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
                         <td>
                             <div class="flex justify-end gap-4">
                                 <a href="{{ route('admin.users.edit', $user->id) }}" class="text-link-primary uppercase"

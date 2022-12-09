@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
@@ -25,7 +26,22 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create', ['roles' => Role::all()]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $user = User::create($request->except(['_token', 'roles']));
+
+        $user->roles()->sync($request->roles);
+
+        return redirect(route('admin.users.index'));
     }
 
     /**
@@ -45,9 +61,12 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+        return view('admin.users.edit', [
+            'roles' => Role::all(),
+            'user' => User::find($id),
+        ]);
     }
 
     /**

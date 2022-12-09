@@ -22,7 +22,7 @@
 
     <x-admin.navigation />
 
-    <main class="py-20 md:ml-64 sm:px-4 min-h-screen max-w-7xl">
+    <main class="py-20 md:ml-64 px-4 min-h-screen max-w-7xl">
         {{ $slot }}
     </main>
 </body>
