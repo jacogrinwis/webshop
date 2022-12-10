@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\PermissionRegistrar;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -29,6 +30,8 @@ class PermissionsDemoSeeder extends Seeder
         Permission::create(['name' => 'unpublish products']);
 
         // create roles and assign existing permissions
+        $roleUser = Role::create(['name' => 'user']);
+
         $roleModerator = Role::create(['name' => 'moderator']);
         $roleModerator->givePermissionTo(['publish products']);
         $roleModerator->givePermissionTo(['unpublish products']);
@@ -60,44 +63,52 @@ class PermissionsDemoSeeder extends Seeder
 
         // create demo users
         $user = User::factory()->create([
+            'name' => 'Frontend User',
+            'email' => 'user@example.com',
+            'password' => Hash::make('password'),
+        ]);
+        $user->assignRole($roleUser);
+
+        $user = User::factory()->create([
             'name' => 'Moderator User',
             'email' => 'moderator@example.com',
+            'password' => Hash::make('password'),
         ]);
         $user->assignRole($roleModerator);
 
         $user = User::factory()->create([
             'name' => 'Publisher User',
             'email' => 'publisher@example.com',
+            'password' => Hash::make('password'),
         ]);
         $user->assignRole($rolePublisher);
 
         $user = User::factory()->create([
             'name' => 'Writer User',
             'email' => 'writer@example.com',
+            'password' => Hash::make('password'),
         ]);
         $user->assignRole($roleWriter);
 
         $user = User::factory()->create([
             'name' => 'Editor User',
             'email' => 'editor@example.com',
+            'password' => Hash::make('password'),
         ]);
         $user->assignRole($roleEditor);
 
         $user = User::factory()->create([
             'name' => 'Admin User',
             'email' => 'admin@example.com',
+            'password' => Hash::make('password'),
         ]);
         $user->assignRole($roleAdmin);
 
         $user = User::factory()->create([
             'name' => 'Super-Admin User',
             'email' => 'superadmin@example.com',
+            'password' => Hash::make('password'),
         ]);
         $user->assignRole($roleSuperAdmin);
-
-        $user = User::factory()->create([
-            'name' => 'Frontend User',
-            'email' => 'user@example.com',
-        ]);
     }
 }

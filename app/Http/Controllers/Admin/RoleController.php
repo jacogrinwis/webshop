@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\User;
-use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index', [
-            'users' => User::paginate(10),
-            'roles' => Role::all()
-        ]);
+        //
     }
 
     /**
@@ -29,7 +24,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create', ['roles' => Role::all()]);
+        //
     }
 
     /**
@@ -40,20 +35,16 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::create($request->except(['_token', 'roles']));
-
-        $user->roles()->sync($request->roles);
-
-        return redirect(route('admin.users.index'));
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
         //
     }
@@ -61,43 +52,34 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return view('admin.users.edit', [
-            'roles' => Role::all(),
-            'user' => User::find($id),
-        ]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
-        $user->update($request->except(['_toker', 'roles']));
-        $user->roles()->sync($request->roles);
-
-        return redirect(route('admin.users.index'))->with('message', 'User updated successfully.');;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        // User::destroy($id);
-
-        return redirect()->back()->with('message', 'User delete successfully.');
+        //
     }
 }

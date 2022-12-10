@@ -6,6 +6,6 @@
     </div>
     <form method="POST" action="{{ route('admin.users.update', $user->id) }}">
         @method('PATCH')
-        <x-admin.users.form :user=$user :roles=$roles />
+        <x-admin.users.form :user="$user" :roles="$roles" />
     </form>
 </x-admin-layout>

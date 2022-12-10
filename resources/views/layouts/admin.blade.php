@@ -20,9 +20,9 @@
 
 <body class="font-sans antialiased text-gray-600 dark:text-gray-200 bg-gray-50 dark:bg-gray-900">
 
-    <x-admin.navigation />
+    <x-admin.nav.index />
 
-    <main class="py-20 md:ml-64 px-4 min-h-screen max-w-7xl">
+    <main class="py-24 md:ml-64 px-4 min-h-screen max-w-7xl">
         {{ $slot }}
     </main>
 </body>

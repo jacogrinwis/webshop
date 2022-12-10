@@ -28,8 +28,7 @@
         <label for="password" class="form-label">
             Password</label>
         <input type="password" name="password" id="password"
-            class="form-input @error('password') form-input-error @enderror"
-            value="{{ old('password') }}">
+            class="form-input @error('password') form-input-error @enderror" value="{{ old('password') }}">
         @error('name')
             <span role="alert">
                 {{ $message }}
@@ -38,21 +37,27 @@
     </div>
 @endisset
 
-{{--
 <div class="mb-6">
-    <label for="password_confirmation" class="form-label">
-        Password confirmation</label>
-    <input type="password" id="password_confirmation" class="form-input">
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an role</label>
+    <select id="countries" name="roles"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        @foreach ($roles as $role)
+            <option value="{{ $role->id }}" @isset($user) @if(in_array($role->id, $user->roles->pluck('id')->toArray())) selected @endif @endisset>{{ $role->name }}</option>
+        @endforeach
+    </select>
 </div>
---}}
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-6">
+
+{{-- <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-6">
     @foreach ($roles as $role)
         <div class="grow">
-            {{-- <x-admin.toggle-switch name="roles[]" label="{{ $role->name }}" value="{{ $role->id }}" /> --}}
-            <x-admin.toggle-switch name="roles[]" :user=$user :role=$role />
+            @isset($user)
+                <x-admin.toggle-switch name="roles" :user="$user" :role="$role" />
+            @else
+                <x-admin.toggle-switch name="roles" :role="$role" />
+            @endisset
         </div>
     @endforeach
-</div>
+</div> --}}
 <div class="my-6 mt-12 flex flex-col sm:flex-row gap-4 sm:justify-end">
     <button type="submit" class="btn btn-primary w-full sm:w-auto">
         Submit

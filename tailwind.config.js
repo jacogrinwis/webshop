@@ -21,9 +21,6 @@ module.exports = {
     plugins: [
         require('@tailwindcss/forms'),
         require('flowbite/plugin'),
-        require('tailwind-scrollbar')
+        require('tailwind-scrollbar')({ nocompatible: true }),
     ],
-    variants: {
-        scrollbar: ['dark', 'rounded']
-    }
 };
