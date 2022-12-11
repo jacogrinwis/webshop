@@ -129,7 +129,7 @@ $arr = [
 
 
 <nav x-data="{ open: false }" x-on:click.outside="open = false">
-    <button x-on:click="open = ! open" class="w-6 h-6 fixed top-6 right-6 md:hidden text-white focus:outline-none" >
+    <button x-on:click="open = ! open" class="w-6 h-6 fixed top-4 right-4 md:hidden text-white focus:outline-none" >
         <span class="sr-only">Open main menu</span>
         <div class="block w-5 absolute left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">
             <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
